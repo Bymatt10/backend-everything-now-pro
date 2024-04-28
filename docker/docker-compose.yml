@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  everythingnowpro-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: user-database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: fvpR6_<h8Nn4;uUm-.")a}
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db/data.sql:/docker-entrypoint-initdb.d/init.sql
+      - test_vol:/var/lib/postgresql/data
+
+volumes:
+  test_vol:
+    driver: local
